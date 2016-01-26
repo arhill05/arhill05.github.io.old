@@ -1,0 +1,38 @@
+.different-col {
+	background-color: purple;
+	color: white;
+	border-radius: 25px;
+}
+
+.form-control:focus{
+	border-color: purple;
+	box-shadow: inset 0 1px 1px rgba(128,0,128,.075),0 0 8px rgba(128,0,128,.6);
+}
+
+.social-icon{
+	color: black;
+	transition: .5s;
+} 
+
+.social-icons {
+	padding: 0;
+}
+
+.social-icons li {
+display: inline;
+margin: 0 15px 0 0;
+}
+
+.jumbotron {
+	background-image: url(../img/background.jpg);
+	background-size: 25%;
+	color: white;
+}
+
+.nav-pills li.active a{
+	background-color: purple;
+}
+
+.nav-pills li.active a:hover {
+	background-color: #990099;
+}
