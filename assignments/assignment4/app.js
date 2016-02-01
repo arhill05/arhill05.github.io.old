@@ -5,6 +5,13 @@
     this.products = gems;
   });
 
+    app.controller('GalleryController', function(){
+    this.current = 0;
+    this.setCurrent = function(value){
+      this.current = value || 0;
+    };
+  });
+  
   app.controller('TabController', function(){
     this.tab = 1;
 
