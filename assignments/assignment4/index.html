@@ -10,8 +10,19 @@
     <div class="product row" ng-repeat="product in store.products">
       <h3>
         {{product.name}}
-        <em class="pull-right">${{product.price}}</em>
+        <em class="pull-right">{{product.price | currency}}</em>
       </h3>
+	  
+	  <div class="gallery" ng-show="product.images.length > 0">
+        <div class="img-wrap">
+          <img ng-src="{{product.images[0]}}" />
+        </div>
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}" />
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>
