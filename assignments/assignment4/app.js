@@ -5,7 +5,7 @@
     this.products = gems;
   });
 
-    app.controller('GalleryController', function(){
+  app.controller('GalleryController', function(){
     this.current = 0;
     this.setCurrent = function(value){
       this.current = value || 0;
@@ -33,6 +33,13 @@
     };
   });
 
+  app.directive('productDescription', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'product-description.html'
+		};
+	});
+  
   var gems = [
     {
       name: 'Azurite',
