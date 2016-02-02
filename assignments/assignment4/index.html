@@ -2,6 +2,7 @@
 <html ng-app="gemStore">
   <head>
     <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript" src="../../js/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </head>
@@ -50,11 +51,11 @@
                 <blockquote>
                   <strong>{{review.stars}} Stars</strong>
                   {{review.body}}
-                  <cite class="clearfix">—{{review.author}}</cite>
+                  <cite class="clearfix">—{{review.author}}on{{review.createdOn | date}}</cite>
                 </blockquote>
             </li>
 		</ul>
-		 <form name="reviewForm" ng-submit="reviewCtrl.addReview(product)" ng-controller="ReviewController as reviewCtrl">
+		 <form name="reviewForm" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" ng-controller="ReviewController as reviewCtrl" novalidate>
               <!--  Live Preview -->
               <blockquote>
                 <strong>{{reviewCtrl.review.stars}} Stars</strong>
@@ -65,7 +66,7 @@
               <!--  Review Form -->
               <h4>Submit a Review</h4>
               <fieldset class="form-group">
-                <select class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars">
+                <select class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]"  title="Stars" required>
                   <option value="">Rate the Product</option>
                 </select>
               </fieldset>
@@ -73,7 +74,7 @@
                 <textarea class="form-control" ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review"></textarea>
               </fieldset>
               <fieldset class="form-group">
-                <input type="email" class="form-control" ng-model="reviewCtrl.review.author" placeholder="jimmyDean@example.org" title="Email" />
+                <input type="email" class="form-control" ng-model="reviewCtrl.review.author" placeholder="jimmyDean@example.org" title="Email" required/>
               </fieldset>
               <fieldset class="form-group">
                 <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
