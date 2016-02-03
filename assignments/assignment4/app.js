@@ -36,7 +36,7 @@
   app.directive('productDescription', function(){
 		return {
 			restrict: 'E',
-			templateUrl: 'product-description.html'
+			templateUrl: './product-description.html'
 		};
 	});
   
